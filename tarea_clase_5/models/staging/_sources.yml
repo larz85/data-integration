@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: raw
+    database: airbyte_curso 
+    schema: main
+    tables:
+      - name: raw_openweather_gratis
+      - name: raw_air_pollution
