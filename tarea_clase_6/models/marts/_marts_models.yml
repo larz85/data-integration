@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: obt_environmental_snapshots
+    description: "One Big Table (OBT) que unifica datos climáticos y de contaminación del aire listos para consumo en BI."
+    columns:
+      - name: nombre_ciudad
+        description: "Nombre de la ciudad analizada."
+        tests:
+          - not_null
+      - name: condicion_espanol
+        description: "Condición climática principal traducida al español."
+        tests:
+          - not_null
+      - name: categoria_calidad_aire
+        description: "Categoría descriptiva de la calidad del aire basada en el ICA."
+        tests:
+          - not_null
+          # Validamos que las traducciones de nuestro CASE WHEN sean exactas (Generic Test)
+          - accepted_values:
+              values: ['Bueno', 'Justo', 'Moderado', 'Malo', 'Muy Malo', 'Desconocido']

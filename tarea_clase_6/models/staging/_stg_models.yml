@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: stg_clima
+    description: "Datos climáticos limpios extraídos de la API de OpenWeatherMap, con unidades estandarizadas."
+    tests:
+      # Validamos que la tabla no esté vacía (dbt-expectations)
+      - dbt_expectations.expect_table_row_count_to_be_between:
+          min_value: 1
+          max_value: 10000
+    columns:
+      - name: nombre_ciudad
+        description: "Nombre de la ciudad consultada (ej. Asunción, San Lorenzo)."
+        tests:
+          - not_null
+      - name: temperatura_celsius
+        description: "Temperatura actual medida en grados Celsius."
+        tests:
+          - not_null
+          # Validamos un rango lógico de temperatura para Paraguay (dbt-expectations)
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: -5
+              max_value: 55
+      - name: porcentaje_humedad
+        description: "Humedad relativa en porcentaje."
+        tests:
+          # La humedad siempre debe ser entre 0 y 100 (dbt-expectations)
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 100
+
+  - name: stg_contaminacion
+    description: "Datos crudos del Índice de Calidad del Aire (ICA)."
+    columns:
+      - name: indice_ica
+        description: "Índice de calidad del aire proporcionado por la API."
+        tests:
+          - not_null
+          # El índice oficial de OpenWeather solo va del 1 al 5 (dbt-expectations)
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 5
