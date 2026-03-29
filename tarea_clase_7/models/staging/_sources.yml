@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: raw
+    database: airbyte_curso
+    schema: main
+    tables:
+      - name: raw_website_sessions
+      - name: raw_website_pageviews
+      - name: raw_orders
+      - name: raw_order_items
+      - name: raw_order_item_refunds
+      - name: raw_products

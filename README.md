@@ -14,6 +14,8 @@ Para revisar el detalle, las instrucciones de ejecución y el código de cada en
 * **[tarea_clase_6](./tarea_clase_6/) - Calidad de Datos, Testing y Documentación**
   Extensión del pipeline de la clase 5 agregando una capa robusta de **Data Quality**. Implementación de tests genéricos, tests estadísticos avanzados con el paquete `dbt-expectations`, validaciones singulares de reglas de negocio en SQL y generación automática del catálogo de datos y el linaje (DAG).
 
+* **[`/tarea_clase_7`](./tarea_clase_7) - Pipeline ELT Automatizado:** Consiste en un pipeline de extremo a extremo para el e-commerce *Maven Fuzzy Factory*. Implementa ingesta con **Airbyte**, almacenamiento en la nube con **MotherDuck (DuckDB)**, transformación con **dbt**, orquestación automatizada en Python con **Prefect**, y un panel interactivo de BI en **Metabase**.
+
 *(Las próximas tareas del curso se irán agregando en sus respectivos directorios conforme avance la materia).*
 
 ## Stack Tecnológico del Curso
@@ -23,6 +25,8 @@ Durante el desarrollo de estas tareas, aplicamos las siguientes herramientas del
 * **Almacenamiento (Data Warehouse):** MotherDuck / DuckDB
 * **Transformación y Modelado (T):** dbt (Data Build Tool), SQL
 * **Calidad de Datos (DQ):** dbt tests, dbt-expectations
+* **Orquestación de Flujos:** Prefect, Python
+* **Visualización (BI):** Metabase
 * **Control de Versiones:** Git
 
 ---
