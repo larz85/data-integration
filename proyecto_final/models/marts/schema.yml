@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: obt_monitoreo_integridad
+    description: "One Big Table para monitoreo de integridad pública y alertas de sanciones."
+    # Verificar que la tabla tenga datos
+    tests:
+      - dbt_expectations.expect_table_row_count_to_be_between:
+          min_value: 1
+
+    columns:
+      - name: ocid
+        description: "ID único del proceso de contratación."
+        # Asegurar que el ID no sea nulo
+        tests:
+          - dbt_expectations.expect_column_values_to_not_be_null
+
+      - name: estado
+        description: "Estado de la licitación."
+        # Validar que los estados estén dentro del dominio esperado
+        tests:
+          - dbt_expectations.expect_column_values_to_be_in_set:
+              value_set: ['Adjudicada', 'Cancelada', 'Desierta', 'En Evaluacion (Cerrada)', 'En Convocatoria (Abierta)', 'Estado Desconocido']
+
+      - name: proveedor_ruc
+        description: "RUC del proveedor adjudicado."
+        # Validar formato del RUC mediante Expresiones Regulares
+        tests:
+          - dbt_expectations.expect_column_values_to_match_regex:
+              regex: "^[a-zA-Z0-9-]*$"
+
+      - name: es_alerta_sancion
+        description: "Bandera que indica si el proveedor está en la lista de OpenSanctions."
+        # Validar que sea estrictamente un campo booleano
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: BOOLEAN
+
+      - name: comprador
+        description: "Nombre de la institución que realiza la compra."
+        # Asegurar que el nombre tenga una longitud válida (ni vacío, ni gigante)
+        tests:
+          - dbt_expectations.expect_column_value_lengths_to_be_between:
+              min_value: 2
+              max_value: 1000

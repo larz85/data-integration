@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: raw
+    database: aml_proveedores_py
+    schema: main
+    tables:
+      - name: raw_opensanctions_org
+      - name: raw_procesos_dncp
+      - name: raw_awards_csv
