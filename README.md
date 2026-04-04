@@ -16,6 +16,9 @@ Para revisar el detalle, las instrucciones de ejecución y el código de cada en
 
 * **[`/tarea_clase_7`](./tarea_clase_7) - Pipeline ELT Automatizado:** Consiste en un pipeline de extremo a extremo para el e-commerce *Maven Fuzzy Factory*. Implementa ingesta con **Airbyte**, almacenamiento en la nube con **MotherDuck (DuckDB)**, transformación con **dbt**, orquestación automatizada en Python con **Prefect**, y un panel interactivo de BI en **Metabase**.
 
+* **[proyecto_final](./proyecto_final/) - Proyecto Final: Monitoreo de Integridad Pública (AML)**
+  Trabajo final de la materia. Un *Modern Data Stack* automatizado para la detección de riesgos de Lavado de Activos en el sector público. Cruza datos de contrataciones (DNCP) con listas de sanciones internacionales (OpenSanctions) utilizando **Airbyte**, scripts customizados en **Python**, **dbt**, **MotherDuck**, orquestación con **Prefect** y visualización de riesgos en **Metabase**.
+
 *(Las próximas tareas del curso se irán agregando en sus respectivos directorios conforme avance la materia).*
 
 ## Stack Tecnológico del Curso
@@ -30,4 +33,4 @@ Durante el desarrollo de estas tareas, aplicamos las siguientes herramientas del
 * **Control de Versiones:** Git
 
 ---
-**Autor:** Luis Rios
+**Autor:** Luis Ríos (Proyecto Final en coautoría con Víctor Mendoza)
