@@ -14,7 +14,7 @@ Para revisar el detalle, las instrucciones de ejecución y el código de cada en
 * **[tarea_clase_6](./tarea_clase_6/) - Calidad de Datos, Testing y Documentación**
   Extensión del pipeline de la clase 5 agregando una capa robusta de **Data Quality**. Implementación de tests genéricos, tests estadísticos avanzados con el paquete `dbt-expectations`, validaciones singulares de reglas de negocio en SQL y generación automática del catálogo de datos y el linaje (DAG).
 
-* **[`/tarea_clase_7`](./tarea_clase_7) - Pipeline ELT Automatizado:** Consiste en un pipeline de extremo a extremo para el e-commerce *Maven Fuzzy Factory*. Implementa ingesta con **Airbyte**, almacenamiento en la nube con **MotherDuck (DuckDB)**, transformación con **dbt**, orquestación automatizada en Python con **Prefect**, y un panel interactivo de BI en **Metabase**.
+* **[tarea_clase_7](./tarea_clase_7) - Pipeline ELT Automatizado:** Consiste en un pipeline de extremo a extremo para el e-commerce *Maven Fuzzy Factory*. Implementa ingesta con **Airbyte**, almacenamiento en la nube con **MotherDuck (DuckDB)**, transformación con **dbt**, orquestación automatizada en Python con **Prefect**, y un panel interactivo de BI en **Metabase**.
 
 * **[proyecto_final](./proyecto_final/) - Proyecto Final: Monitoreo de Integridad Pública (AML)**
   Trabajo final de la materia. Un *Modern Data Stack* automatizado para la detección de riesgos de Lavado de Activos en el sector público. Cruza datos de contrataciones (DNCP) con listas de sanciones internacionales (OpenSanctions) utilizando **Airbyte**, scripts customizados en **Python**, **dbt**, **MotherDuck**, orquestación con **Prefect** y visualización de riesgos en **Metabase**.
