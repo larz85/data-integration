@@ -77,3 +77,5 @@ El resultado final del pipeline es consumido por Metabase. Los tableros generado
 - Cuantificar el monto total adjudicado a empresas con alertas de riesgo.
 - Identificar el "Top 5" de instituciones estatales con mayor nivel de exposición a listas de sanciones internacionales.
 - Monitorear la evolución mensual de licitaciones y categorías de compra.
+
+**Autor:** Luis Ríos en coautoría con Víctor Mendoza
